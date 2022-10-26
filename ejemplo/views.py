@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from ejemplo.models import Familiar
 from ejemplo.forms import Buscar 
-from django.views import View 
+from django.views import View
 
 def index(request):
     suma = 1 + 1
