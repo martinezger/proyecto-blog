@@ -15,7 +15,8 @@ def index(request):
     return render(request, 'blog/index.html', {"posts": posts})
 
 class ListPost(ListView):
-    model=Post
+    paginate_by = 2
+    model = Post
 
 class CreatePost(CreateView):
     model=Post
@@ -26,12 +27,12 @@ class DetailPost(DetailView):
     model=Post
 
 class UpdatePost(UpdateView):
-    model=Post
-    fields=['title', 'short_content', 'content', 'image']
+    model = Post
+    fields = ['title', 'short_content', 'content', 'image']
     success_url = reverse_lazy("list-post")
 
 class DeletePost(DeleteView):
-    model=Post
+    model = Post
     success_url = reverse_lazy("list-post")
 
 
