@@ -16,7 +16,6 @@ class Post(models.Model):
 
 
 class RegisterForm(UserCreationForm):
-    email = forms.EmailField()
     class Meta:
         model = User
         fields = ['username',  'password1', 'password2', 'first_name', 'last_name', 'email',]

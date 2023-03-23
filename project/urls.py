@@ -28,7 +28,7 @@ urlpatterns = [
     path('mi-familia/', monstrar_familiares),
     path('mi-familia/buscar', BuscarFamiliar.as_view()),
     path('panel-familia/', include('panel_familia.urls')),
-    path('blog/', include('blog.urls')),
+    path('', include('blog.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
