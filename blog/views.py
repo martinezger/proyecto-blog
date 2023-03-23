@@ -7,7 +7,7 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import View
 from django.views.generic import ListView, CreateView, DeleteView, UpdateView, DetailView
-from blog.models import Post
+from blog.models import Post, RegisterForm
 
 
 def index(request):
@@ -50,7 +50,7 @@ class BlogLogout(LogoutView):
     template_name = 'blog/blog_logout.html'
     
 class BlogSignUp(CreateView):
-    form_class = UserCreationForm
+    form_class = RegisterForm
     success_url = reverse_lazy("blog-login")
     template_name = "registration/signup.html"
 
